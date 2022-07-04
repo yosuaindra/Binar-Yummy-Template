@@ -1,18 +1,46 @@
+:root {
+    --font-1: 'Inter', sans-serif;
+    --font-2: 'Amatic SC', cursive;
+}
 body{
+    padding: 0;
+    margin: 0;
+    font-family: var(--font-1);
+    padding-top: 90px;
+}
+@media (max-width: 500px){
+    body{
+        padding-top: 70px;
+    }
+}
+h1,h2,h3,h4,h5,h6,p{
     padding: 0;
     margin: 0;
 }
 .container{
-    display: flex;
-    max-width: 900px;
+    max-width: 1120px;
+    margin: 0 auto;
+}
+@media only screen and (max-width: 500px){
+    .container{
+        width: 95%;
+    }
 }
 header{
     position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     width: 100%;
     height: 90px;
     background-color: white;
     border-bottom: 1px solid #ccc;
     z-index: 997;
+}
+@media (max-width: 500px){
+    header{
+        height: 70px;
+    }
 }
 nav{
     display: flex;
@@ -22,12 +50,12 @@ nav{
     width: 100%;
     transition: all 0.5s;
     height: 90px;
+    overflow: hidden;
 }
-nav .nav-logo,nav .book,nav .nav{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 90px;
+@media (max-width: 500px){
+    nav{
+        height: 70px;
+    }
 }
 nav .nav-logo p{
     font-size: 28px;
@@ -41,20 +69,35 @@ nav .nav ul{
     display: flex;
 }
 @media (max-width: 500px){
-    nav .nav ul{
+    nav .nav{
         display: none;
     }
 }
 nav .nav ul li{
     list-style: none;
 }
+nav .nav ul li.active a, nav .nav ul li:hover a{
+    color: #000;
+
+}
+nav .nav ul li.active a:before, nav .nav ul li:hover a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -6px;
+    left: 0;
+    background-color: #ce1212;
+    transition: all 0.3s ease-in-out 0s;
+}
 nav .nav ul li a{
+    position: relative;
     text-decoration: none;
     display: flex;
     align-items: center;
     justify-content: center;
     justify-content: space-between;
-    padding: 10px 20px;
+    margin: 10px 20px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.8);
     font-size: 16px;
     font-weight: 600;
@@ -63,28 +106,41 @@ nav .nav ul li a{
     transition: 0.3s;
 }
 nav .book a{
-    background-color: #ce1212;
+    background: rgba(206, 18, 18, 1);
     font-size: 14px;
     color: #fff;
-    padding: 8px 20px;
-    margin-left: 30px;
+    padding: 10px 20px;
     display: block;
-    margin-top: -12px;
     border-radius: 50px;
     transition: 0.3s;
     text-decoration: none;
 }
-/* main */
-main{
-    padding-top: 90px;
+@media (max-width: 500px){
+    nav .book a{
+        margin-left: 70px;
+    }
 }
+nav .book a:hover{
+    background: rgba(206, 18, 18, 0.8);
+}
+.hamburger-menu{
+    display: none;
+}
+@media (max-width: 500px){
+    .hamburger-menu{
+        display: block;
+        font-size: 27px;
+    }
+}
+/* main */
 main .hero{
     background-color: #eee;
 }
 main .hero .container{
+    display: flex;
     justify-content: space-between;
     flex-direction: row;
-    padding: 100px 0;
+    padding: 70px 0;
 }
 main .hero .container .desc{
     display: flex;
@@ -98,10 +154,16 @@ main .hero .container .desc h1{
     font-size: 64px;
     font-weight: 700;
     margin-bottom: 20px;
+    font-family: var(--font-2);
+    width: 70%;
 }
 
 main .hero .container .desc p{
-    
+    width: 70%;
+    color: #4f4f5a;
+    font-weight: 400;
+    margin-bottom: 30px;
+    line-height: 1.5;
 }
 main .hero .container .desc div{
     display: flex;
@@ -128,10 +190,11 @@ main .hero .container .desc div a.btn-red{
 main .hero .img{
     display: flex;
     width: 50%;
-    justify-content: center;
+    justify-content: flex-end;
 }
 main .hero .img img{
-    height: 376px;
+    width: 80%;
+    height: auto;
 }
 /* about */
 main .about{
