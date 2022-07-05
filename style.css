@@ -419,6 +419,123 @@ main .about .container .desc .text p{
     margin-bottom: 1rem;
     line-height: 1.5;
 }
+/* why us */
+.why-us{
+    background-color: #eee;
+}
+.why-us .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 0;
+}
+@media (max-width: 500px){
+    .why-us .container{
+        padding: 50px 0;
+    }
+}
+.why-us .content{
+    display: flex;
+    gap: 20px;
+}
+@media (max-width: 500px){
+    .why-us .content{
+        flex-direction: column;
+    }
+}
+.why-us .content .hightlight{
+    width: 370px;
+    background-color: #ce1212;
+    color: white;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+@media (max-width: 500px){
+    .why-us .content .hightlight{
+        width: 100%;
+    }
+}
+.why-us .content .hightlight h2{
+    font-weight: 700;
+    font-size: 34px;
+    margin-bottom: 30px;
+}
+.why-us .content .hightlight p{
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+.why-us .content .hightlight a{
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.3);
+    padding: 10px 30px;
+    color: #fff;
+    border-radius: 50px;
+    transition: all ease-in-out 0.4s;
+    text-decoration: none;
+}
+.why-us .content .hightlight a:hover{
+    background: rgba(255, 255, 255, 1);
+    color: #ce1212;
+}
+.why-us .content .col-row{
+    display: flex;
+    gap: 15px;
+    width: 75%;
+}
+@media (max-width: 500px){
+    .why-us .content .col-row{
+        flex-direction: column;
+        width: 100%;
+        gap: 20px;
+    }
+}
+.why-us .content .col{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: #fff;
+    padding: 40px 30px;
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgba(55, 55, 63, 0.1);
+    transition: 0.3s;
+    transform: scale(0.93);
+}
+@media (max-width: 500px){
+    .why-us .content .col{
+        width: 100%;
+        transform: scale(1);
+    }
+}
+.why-us .content .col:hover{
+    transform: scale(0.98);
+}
+.why-us .content .col i{
+    color: #ce1212;
+    margin-bottom: 30px;
+    font-size: 32px;
+    background: rgba(206, 18, 18, 0.1);
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+}
+.why-us .content .col h3{
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0 0 30px 0;
+}
+.why-us .content .col p{
+    font-size: 16px;
+    color: #6c757d;
+    line-height: 1.5;
+}
 /* footer */
 footer{
     font-size: 14px;
