@@ -2,6 +2,9 @@
     --font-1: 'Inter', sans-serif;
     --font-2: 'Amatic SC', cursive;
 }
+*{
+    box-sizing: border-box;
+}
 body{
     padding: 0;
     margin: 0;
@@ -286,15 +289,20 @@ main .hero .img img{
 }
 /* about */
 main .about{
-
+    overflow-x: hidden;
+    max-width: 100%;
 }
 main .about .container{
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    max-width: 900px;
-    padding: 100px 0;
+    padding: 80px 0;
+}
+@media (max-width: 500px){
+    main .about .container{
+        padding: 50px 0;
+    }
 }
 main .about .container .title{
     display: flex;
@@ -306,13 +314,16 @@ main .about .container .title h2{
     color: #7f7f90;
     font-size: 13px;
     letter-spacing: 1px;
+    margin-bottom: 5px;
     font-weight: 400;
     text-transform: uppercase;
 }
 main .about .container .title p{
-    font-size: 30px;
+    font-size: 48px;
     font-weight: 400;
     text-transform: uppercase;
+    font-family: var(--font-2);
+    margin-bottom: 30px;
 }
 main .about .container .title p span{
     color: #ce1212;
@@ -322,14 +333,89 @@ main .about .container .desc{
     flex-direction: row;
     gap: 20px;
 }
-main .about .container .desc .img, main .about .container .desc .text{
-    width: 50%;
+@media (max-width: 500px){
+    main .about .container .desc{
+        flex-direction: column;
+    }
 }
-main .about .container .desc .img img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+main .about .container .desc .img{
+    width: 57%;
+    position: relative;
+    background: url('https://bootstrapmade.com/demo/templates/Yummy/assets/img/about.jpg');
 }
-main .about .container .desc .text img{
+@media (max-width: 500px){
+    main .about .container .desc .img{
+        height: 400px;
+        width: 120%;
+        margin-left: -10%;
+    }
+}
+main .about .container .desc .text{
+    width: 43%;
+    padding-left: 3rem;
+}
+@media (max-width: 500px){
+    main .about .container .desc .text{
+        width: 100%;
+        padding-left: 0;
+    }
+}
+main .about .container .desc .img .info{
+    background-color: white;
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    bottom: 10%;
+    background-color: #fff;
+    box-shadow: 0px 2px 25px rgb(0 0 0 / 8%);
+    padding: 20px;
+    padding-bottom: 30px !important;
+    text-align: center;
+}
+main .about .container .desc .img .info h4{
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+main .about .container .desc .img .info p{
+    font-size: 28px;
+    font-weight: 700;
+    color: #ce1212;
+}
+main .about .container .desc .text .img-video{
+    position: relative;
+}
+main .about .container .desc .text .img-video i{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #ce1212;
+    font-size: 70px;
+}
+main .about .container .desc .text .img-video img{
     width: 100%;
+}
+main .about .container .desc .text .italic{
+    font-style: italic;
+}
+main .about .container .desc .text ul{
+    margin-left: -2.5rem;
+}
+main .about .container .desc .text ul li{
+    list-style: none;
+    padding: 0 0 8px 26px;
+    position: relative;
+    line-height: 1.5;
+}
+main .about .container .desc .text ul li i{
+    position: absolute;
+    font-size: 20px;
+    left: 0;
+    top: 3px;
+    color: #ce1212;
+}
+main .about .container .desc .text p{
+    margin-bottom: 1rem;
+    line-height: 1.5;
 }
