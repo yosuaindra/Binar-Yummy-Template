@@ -419,3 +419,83 @@ main .about .container .desc .text p{
     margin-bottom: 1rem;
     line-height: 1.5;
 }
+/* footer */
+footer{
+    font-size: 14px;
+    background-color: #1f1f24;
+    padding: 50px 0;
+    color: rgba(255, 255, 255, 0.7);
+}
+footer .content{
+    display: flex;
+    justify-content: space-between;
+}
+@media (max-width: 500px){
+    footer .content{
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+footer .content div.col{
+    display: flex;
+    justify-content: flex-start;
+}
+footer .content div.col i{
+    font-size: 25px;
+    margin-right: 20px;
+}
+footer .content div.col .text h4{
+    font-size: 16px;
+    font-weight: bold;
+    position: relative;
+    margin-bottom: 12px;
+    color: #fff;
+}
+footer .content div.col .text p{
+    margin-bottom: 1rem;
+}
+footer .content div.sosmed .text .sosmed-list{
+    display: flex;
+    flex-direction: row;
+}
+footer .content div.sosmed .text .sosmed-list div a{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.7);
+    margin-right: 10px;
+    transition: 0.3s;
+}
+footer .content div.sosmed .text .sosmed-list div a:hover{
+    border: 1px solid rgba(255, 255, 255, 1);
+}
+footer .content div.sosmed .text .sosmed-list div a i{
+    font-size: 16px;
+    margin-right: 0;
+    color: rgba(255, 255, 255, 0.7);
+}
+footer .content div.sosmed .text .sosmed-list div a:hover i{
+    color: rgba(255, 255, 255, 1);
+}
+footer .copyrights{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+footer .copyrights p:nth-child(2){
+    padding-top: 7px;
+    text-align: center;
+    font-size: 13px;
+}
+footer .copyrights p:nth-child(2) a{
+    text-decoration: none;
+    color: #fff;
+}
