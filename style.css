@@ -42,7 +42,7 @@ header{
         height: 70px;
     }
 }
-nav{
+.top-menu{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -53,34 +53,31 @@ nav{
     overflow: hidden;
 }
 @media (max-width: 500px){
-    nav{
+    .top-menu{
         height: 70px;
     }
 }
-nav .nav-logo p{
+.top-menu .nav-logo p{
     font-size: 28px;
     font-weight: 700;
     color: #000;
 }
-nav .nav-logo p span{
+.top-menu .nav-logo p span{
     color: #ce1212 !important;
 }
-nav .nav ul{
+.top-menu nav{
     display: flex;
 }
 @media (max-width: 500px){
-    nav .nav{
+    .top-menu nav{
         display: none;
     }
 }
-nav .nav ul li{
-    list-style: none;
-}
-nav .nav ul li.active a, nav .nav ul li:hover a{
+.top-menu nav a.active, .top-menu nav a:hover{
     color: #000;
 
 }
-nav .nav ul li.active a:before, nav .nav ul li:hover a:before {
+.top-menu nav a.active:before,.top-menu nav a:hover:before {
     content: "";
     position: absolute;
     width: 100%;
@@ -90,7 +87,7 @@ nav .nav ul li.active a:before, nav .nav ul li:hover a:before {
     background-color: #ce1212;
     transition: all 0.3s ease-in-out 0s;
 }
-nav .nav ul li a{
+.top-menu nav a{
     position: relative;
     text-decoration: none;
     display: flex;
@@ -105,7 +102,7 @@ nav .nav ul li a{
     white-space: nowrap;
     transition: 0.3s;
 }
-nav .book a{
+.top-menu .book a{
     background: rgba(206, 18, 18, 1);
     font-size: 14px;
     color: #fff;
@@ -116,11 +113,11 @@ nav .book a{
     text-decoration: none;
 }
 @media (max-width: 500px){
-    nav .book a{
+    .top-menu .book a{
         margin-left: 70px;
     }
 }
-nav .book a:hover{
+.top-menu .book a:hover{
     background: rgba(206, 18, 18, 0.8);
 }
 .hamburger-menu{
@@ -132,7 +129,9 @@ nav .book a:hover{
         font-size: 27px;
     }
 }
-/* main */
+/* hero */
+main{
+}
 main .hero{
     background-color: #eee;
 }
@@ -142,13 +141,25 @@ main .hero .container{
     flex-direction: row;
     padding: 70px 0;
 }
+@media (max-width: 500px){
+    main .hero .container{
+        flex-direction: column-reverse;
+        padding: 50px 0;
+    }
+}
 main .hero .container .desc{
     display: flex;
     flex-direction: column;
     justify-content: center;
     position: relative;
-    min-height: 60vh;
     width: 50%;
+}
+@media (max-width: 500px){
+    main .hero .container .desc{
+        width: 100%;
+        align-items: center;
+        text-align: center;
+    }
 }
 main .hero .container .desc h1{
     font-size: 64px;
@@ -157,13 +168,22 @@ main .hero .container .desc h1{
     font-family: var(--font-2);
     width: 70%;
 }
-
+@media (max-width: 500px){
+    main .hero .container .desc h1{
+        font-size: 36px;
+    }
+}
 main .hero .container .desc p{
     width: 70%;
     color: #4f4f5a;
     font-weight: 400;
     margin-bottom: 30px;
     line-height: 1.5;
+}
+@media (max-width: 500px){
+    main .hero .container .desc p{
+        width: 95%;
+    }
 }
 main .hero .container .desc div{
     display: flex;
@@ -181,20 +201,54 @@ main .hero .container .desc div a.btn-red{
     background-color: #ce1212;
     font-size: 14px;
     color: #fff;
-    padding: 8px 20px;
+    padding: 14px 36px;
+    letter-spacing: 1px;
+    font-weight: 500;
     display: block;
     border-radius: 50px;
-    transition: 0.3s;
+    transition: 0.5s;
     text-decoration: none;
+    box-shadow: 0 8px 28px rgb(206 18 18 / 20%);
+}
+main .hero .container .desc div a.btn-video{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.5s;
+}
+main .hero .container .desc div a.btn-video:hover{
+    color: #ce1212;
+}
+main .hero .container .desc div a.btn-video i{
+    color: #ce1212;
+    font-size: 32px;
+    transition: 0.3s;
+    line-height: 0;
+    margin-right: 8px;
 }
 main .hero .img{
     display: flex;
     width: 50%;
     justify-content: flex-end;
 }
+@media (max-width: 500px){
+    main .hero .img{
+        justify-content: center;
+        width: 100%;
+    }
+}
 main .hero .img img{
     width: 80%;
     height: auto;
+    margin-bottom: 40px;
+}
+@media (max-width: 500px){
+    main .hero .img img{
+        width: 95%;
+    }
 }
 /* about */
 main .about{
